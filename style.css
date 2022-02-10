@@ -1,0 +1,41 @@
+body{
+  background-color: olivedrab;
+}
+
+.pen marquee{
+  min-height: 25vh;
+  display: block;
+  width: 100%;
+}
+
+.pen marquee marquee{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.fence{
+  outline: dashed 2px darkslategrey;
+}
+
+.pen{
+  background-color: olivedrab;
+}
+
+.animal{
+  cursor: grab;
+  height: 40px;
+  width: 40px;
+  transition: all .2s ease;
+  user-select: none;
+}
+
+.animal:hover{
+  transform: scale(1.1) translateX(5%);
+  filter: drop-shadow(0px 0px 4px white);
+}
+
+.hungry{
+  filter: drop-shadow(0px 0px 15px rgba(255, 0, 0, 0.746));
+}

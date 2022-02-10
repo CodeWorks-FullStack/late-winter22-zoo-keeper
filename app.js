@@ -68,7 +68,7 @@ function updateAnimal(name){
   // NOTE grabs the appropriate animal pen by the id/name
   let animalElm = document.getElementById(name)
   // console.log(animalElm)
-  // NOTE searches the animal pen element for the div with the progress-bar class
+  // NOTE searches the animal pen element for the element with the progress-bar class
   let bar = animalElm.querySelector('.progress-bar')
   // console.log(bar);
   // NOTE changes the width of progress bar to match the animals hunger

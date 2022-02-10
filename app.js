@@ -2,6 +2,7 @@ console.log('welcome to the jungle');
 let money = 0
 let deadAnimals = 0
 
+// NOTE our dictionary of animals
 let animals = {
   koko: {
     hunger: 100,
@@ -79,13 +80,16 @@ function updateAnimal(name){
     animalElm.querySelector('.animal').classList.remove('hungry')
   }
   if(animals[name].hunger <=0){
+    // @ts-ignore
     animalElm.querySelector('.animal').innerText = '👻'
   }
 }
 
+// NOTE iterates over animal dictionary and if they are alive reduces hunger score, also determines if they die
 function hunger(){
   console.log('the animals hunger');
   for(let key in animals){
+    // NOTE the alias variable 'animal' here is a 'for in' equivalent of the array 'arr[i]' alias
     let animal = animals[key]
     if(animal.hunger > 0){
       animal.hunger -= 10
@@ -104,7 +108,8 @@ function hunger(){
 }
 
 
-
+// NOTE takes in the name of the animal clicked, checks if they are alive, if so increases hunger by 4.
+// second if 'clamps' the health so that it doesn't go over 100
 function feed(name){
  let animal = animals[name]
  if(animal.hunger > 0){
@@ -116,6 +121,7 @@ function feed(name){
   updateAnimal(name)
 }
 
+// NOTE iterates over all animals and checks if they are alive then adds a dollar if they are
 function getMoney(){
   for(let key in animals){
     let animal = animals[key]
@@ -126,7 +132,8 @@ function getMoney(){
   document.getElementById('money').innerText = money.toFixed(2)
 }
 
-
+// Draw the animals
 drawAnimals()
+// NOTE start the intervals, the functions passed are not invoked cause we want them to run on the time of the interval and not when the set line is read.
 let hungerInterval = setInterval(hunger, 2000)
 let moneyInterval = setInterval(getMoney, 5000)
